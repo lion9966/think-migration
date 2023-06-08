@@ -1,7 +1,7 @@
 <?php
 
-$tag = 'v1.0.0';
-$msg = '进行一些细微调整';
+$tag = 'v1.0.1';
+$msg = 'init';
 echo `git add .`;   //添加所有更改
 echo `git commit -m "$msg"`;    //提交更改
 echo `git tag "$tag"`;   //创建新版本标签
