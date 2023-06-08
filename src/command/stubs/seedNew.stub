@@ -1,0 +1,45 @@
+<?php
+
+use think\migration\Seeder;
+
+class SeederClass extends Seeder
+{
+    /**
+     * Run Method.
+     *
+     * Write your database seeder using this method.
+     *
+     * More information on writing seeders is available here:
+     * http://docs.phinx.org/en/latest/seeding.html
+     */
+    public function run()
+    {
+         $data = array(
+            [
+                "id"=>1,"parentid"=>1,"code"=>"site_name","name"=>"系统名称","value"=>"瑞士Imetric 4D口扫设备维修系统","store_range"=>null,"type"=>"text"
+            ],
+            [
+                "id"=>2,"parentid"=>1,"code"=>"verify","name"=>"前端页验证码","value"=>"1","store_range"=>null,"type"=>"checkbox"
+            ],
+            [
+                "id"=>3,"parentid"=>1,"code"=>"page_keywords","name"=>"前端页关键字","value"=>"瑞士, Imetric 4D, 口扫","store_range"=>null,"type"=>"text"
+            ],
+            [
+                "id"=>4,"parentid"=>1,"code"=>"page_desc","name"=>"前端页描述","value"=>"瑞士Imetric 4D口扫维修系统","store_range"=>null,"type"=>"text"
+            ],
+            [
+                "id"=>5,"parentid"=>1,"code"=>"site_close","name"=>"网站状态","value"=>"","store_range"=>null,"type"=>"text"
+            ],
+            [
+                "id"=>6,"parentid"=>1,"code"=>"sms","name"=>"SMS短信设置","value"=>json_encode(["sms_id"=>"k12378","sms_key"=>"789076yt788","sms_sign"=>"花朵科技","sms_template_id"=>"14569"]),"store_range"=>"1","type"=>"json"
+            ],
+            [
+                "id"=>7,"parentid"=>1,"code"=>"email","name"=>"Email设置","value"=>json_encode(["email_user"=>"timo","email_key"=>"kjuhy","smtp"=>"smtp.qq.com","email_sign"=>"花朵"]),"store_range"=>"1","type"=>"json"
+            ],
+        );
+        $posts = $this->table(sv_config);
+        $posts->insert($data)
+              ->save();
+
+    }
+}
